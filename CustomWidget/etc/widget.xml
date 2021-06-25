@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\CustomWidget
+ * @date        2020
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     See LICENSE_ADVERT_CENTER.txt for license details.
+ */
+ -->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="DevVsAdmin\CustomWidget\Block\MyWidget" id="countdown_widget">
+        <label>MyWidget</label>
+        <description>Widget description</description>
+        <parameters>
+            <parameter name="template" xsi:type="select" required="true" visible="true"  sort_order="3">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="DevVsAdmin_CustomWidget::widget.phtml">
+                        <label translate="true">Default</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="some_text" xsi:type="text" required="true" visible="true"  sort_order="4">
+                <label translate="true">Some text</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

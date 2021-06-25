@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\SimpleModule
+ * @date        2020
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     See LICENSE_ADVERT_CENTER.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="DevVsAdmin_SimpleModule::config"
+                          title="SimpleModule Config"
+                          translate="title"
+                          sortOrder="0">
+                    <resource id="DevVsAdmin_SimpleModule::api"
+                              title="SimpleModule API"
+                              translate="title"
+                              sortOrder="0" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

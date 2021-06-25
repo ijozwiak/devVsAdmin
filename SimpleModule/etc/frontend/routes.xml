@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\SimpleModule
+ * @date        2020
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="simplemodule" frontName="simplemodule">
+            <module name="DevVsAdmin_SimpleModule" />
+        </route>
+    </router>
+</config>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\SimpleModule
+ * @date        2021
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     See LICENSE_ADVERT_CENTER.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/simple" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="execute"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/simple-auth" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="execute"/>
+        <resources>
+            <resource ref="DevVsAdmin_SimpleModule::api" />
+        </resources>
+    </route>
+    <route url="/V1/simple/list" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/plugin/:param" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="plugin"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/plugin/:param/before" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="pluginBefore"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/plugin/:param/around" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="pluginAround"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/plugin/:param/after" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleApiInterface" method="pluginAfter"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/register/:param/:value" method="POST">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleValueApiInterface" method="setValue"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/register/:param" method="GET">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleValueApiInterface" method="getValue"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/register/:param" method="DELETE">
+        <service class="DevVsAdmin\SimpleModule\Api\SimpleValueApiInterface" method="unsValue"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

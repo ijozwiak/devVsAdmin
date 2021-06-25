@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\SimpleModule
+ * @date        2020
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     See LICENSE_ADVERT_CENTER.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="DevVsAdmin_SimpleModule" setup_version="1.0.0" />
+    <sequence>
+        <module name="Magento_GraphQl"/>
+    </sequence>
+</config>

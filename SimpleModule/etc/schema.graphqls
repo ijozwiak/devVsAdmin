@@ -1,0 +1,25 @@
+type Query {
+    simple(
+        id: Int @doc(description: "Simple record ID")
+    ): Simple
+    @resolver(class:"DevVsAdmin\\SimpleModule\\Model\\Resolver\\Simple")
+    @doc(description: "The simple query returns name of simple record")
+    @cache(cacheable: false)
+}
+type Simple @doc(description: "The Simple query returns name of simple record") {
+    name: String
+}
+
+
+type Query {
+    Simplename(
+        firstname: String @doc(description: "Firstname")
+        lastname: String @doc(description: "Lastname")
+    ): Simplename
+    @resolver(class:"DevVsAdmin\\SimpleModule\\Model\\Resolver\\Simplename")
+    @doc(description: "Firstname / lastname")
+    @cache(cacheable: false)
+}
+type Simplename @doc(description: "Firstname / lastname") {
+    firstname: String
+}

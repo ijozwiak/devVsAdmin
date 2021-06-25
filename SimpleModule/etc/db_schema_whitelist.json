@@ -1,0 +1,12 @@
+{
+    "devvsadmin_simple": {
+        "column": {
+            "simple_id": true,
+            "name": true,
+            "value": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<!--@subject {{trans "Simple email"}} @-->
+
+<!--@vars {
+"var firstParam":"The first param",
+"var secondParam":"The second"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+This is the sample e-mail with two params:
+<br />
+The first one is: {{var firstParam}}
+<br />
+The second one is: {{var secondParam}}
+
+{{template config_path="design/email/footer_template"}}

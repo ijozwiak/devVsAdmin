@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\UIComponent
+ * @date        2020
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     See LICENSE_ADVERT_CENTER.txt for license details.
+ */
+
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ */
+
+?>
+
+<div id="devVsAdminJsLayout">
+    <button type="button" data-role="openModal">
+        OPEN MODAL
+    </button>
+
+    <div data-role="jsLayoutModal" style="display: none;">
+        Lorem impum set dolores
+    </div>
+</div>
+
+
+<script type="text/x-magento-init">
+  {
+    "#devVsAdminJsLayout": {
+      "DevVsAdmin_UIComponent/js/home-jslayout": <?php echo $block->getJsLayout() ?>
+    }
+  }
+</script>

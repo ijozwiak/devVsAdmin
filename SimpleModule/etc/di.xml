@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author      Iwona Jóźwiak <advertcenter@gmail.com>
+ * @package     DevVsAdmin\SimpleModule
+ * @date        2021
+ * @copyright   Copyright (C) 2021 Advert Center
+ * @license     See LICENSE_ADVERT_CENTER.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="DevVsAdmin\SimpleModule\Api\Data\SimpleDataInterface"
+                type="DevVsAdmin\SimpleModule\Model\Simple" />
+    <preference for="DevVsAdmin\SimpleModule\Api\SimpleApiInterface"
+                type="DevVsAdmin\SimpleModule\Service\SimpleApi" />
+    <preference for="DevVsAdmin\SimpleModule\Api\Data\SimpleDataResultInterface"
+                type="DevVsAdmin\SimpleModule\Model\SimpleDataResult" />
+
+    <preference for="DevVsAdmin\SimpleModule\Block\Template"
+                type="DevVsAdmin\SimpleModule\Block\TemplateExt" />
+
+    <preference for="DevVsAdmin\SimpleModule\Api\SimpleValueApiInterface"
+                type="DevVsAdmin\SimpleModule\Service\SetValue" />
+
+    <preference for="DevVsAdmin\SimpleModule\Api\BuilderInterface"
+                type="DevVsAdmin\SimpleModule\Service\BlockBuilder" />
+
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="devvsadmin_product" type="DevVsAdmin\SimpleModule\Plugin\ProductPlugin" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Catalog\Api\Data\CategoryLinkInterface">
+        <plugin name="devvsadmin_categorylink" type="DevVsAdmin\SimpleModule\Plugin\CategoryLinkPlugin" sortOrder="1" disabled="false" />
+    </type>
+    <type name="DevVsAdmin\SimpleModule\Model\SimpleRepository">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="searchResultFactory" xsi:type="object">DevVsAdmin\SimpleModule\Model\SimpleDataResultFactory</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="DevVsAdmin\SimpleModule\Service\SimpleApi">
+        <arguments>
+            <argument name="proxy" xsi:type="object">DevVsAdmin\SimpleModule\Service\SimpleApiProxy</argument>
+        </arguments>
+    </type>
+
+    <type name="DevVsAdmin\SimpleModule\ViewModel\Home">
+        <arguments>
+            <argument name="blocks" xsi:type="array">
+                <item name="first" xsi:type="object">DevVsAdmin\SimpleModule\Block\FirstBlockFactory</item>
+                <item name="second" xsi:type="object">DevVsAdmin\SimpleModule\Block\SecondBlockFactory</item>
+                <item name="third" xsi:type="object">DevVsAdmin\SimpleModule\Block\ThirdBlockFactory</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="DevVsAdmin\SimpleModule\Api\SimpleApiInterface">
+        <plugin name="devvsadmin_plugin" type="DevVsAdmin\SimpleModule\Plugin\ApiPlugin" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="simplemodule_cli" xsi:type="object">DevVsAdmin\SimpleModule\Console\Command\SimpleCli</item>
+                <item name="simplemodule_name" xsi:type="object">DevVsAdmin\SimpleModule\Console\Command\SimpleName</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
