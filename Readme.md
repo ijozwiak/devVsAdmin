@@ -1,6 +1,5 @@
 # DevVsAdmin modules
-
-(header.jpeg)
+![DevVsAdmin](https://github.com/ijozwiak/devVsAdmin/blob/master/header.jpeg)
 
 All modules of this repository is part of a course for the VAVATECH company. The course is available on the site: https://szkolenia.vavatech.pl/szkolenie/wprowadzenie-do-magento-2--783436.html
 
